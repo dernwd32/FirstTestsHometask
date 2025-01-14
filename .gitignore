@@ -1,5 +1,5 @@
 ### IntelliJ IDEA ###
-.idea/
+/.idea/
 *.iws
 *.iml
 *.ipr
@@ -9,4 +9,4 @@
 target/
 /src/main/
 /out/
-/META-INF/
+/META-INF/git
