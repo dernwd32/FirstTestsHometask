@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Extra logging related to initialization of Log4j.
+ Set to debug or trace if log4j initialization is failing. -->
+<Configuration status="warn">
+    <Properties>
+        <Property name="LOG_LEVEL_PATTERN">%-5p</Property>
+        <Property name="LOG_DATE_PATTERN">%d{yyyy-MM-dd HH:mm:ss}</Property>
+        <Property name="LOG_CLASS_METHOD_STRING_PATTERN">%c{1}.%M:%L</Property>
+        <Property name="LOG_PATTERN">${LOG_DATE_PATTERN} ${LOG_LEVEL_PATTERN} ${LOG_CLASS_METHOD_STRING_PATTERN} - %m%n</Property>
+        <!--
+        %-5p - уровень ошибки, зарезервированная длина - 5 символов
+        %c - class
+        %M - method
+        %L - строка с ошибкой
+        %m - сообщение
+        %n - перевод строки
+        -->
+    </Properties>
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </Console>
+        <File name="file" fileName="src/test/logs/log.log">
+            <PatternLayout pattern="${LOG_PATTERN}" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="info" additivity="false">
+            <AppenderRef ref="console" />
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>

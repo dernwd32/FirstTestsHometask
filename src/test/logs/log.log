@@ -1,0 +1,13 @@
+
+2025-01-14 23:53:35 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Chrome] text equals = PASS
+2025-01-14 23:53:37 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Firefox] text equals = PASS
+2025-01-15 00:14:57 INFO  FirstTestsHometask.ifTextGotValuesFromForm:122 - [Chrome] form sent correctly = PASS
+2025-01-15 00:14:59 INFO  FirstTestsHometask.ifTextGotValuesFromForm:122 - [Firefox] form sent correctly = PASS
+2025-01-15 00:15:01 INFO  FirstTestsHometask.ifEqualsInputText:45 - [Chrome] text equals = PASS
+2025-01-15 00:15:03 INFO  FirstTestsHometask.ifEqualsInputText:45 - [Firefox] text equals = PASS
+2025-01-15 00:15:04 INFO  FirstTestsHometask.ifModalShowAndHideIsCorrect:68 - [Chrome] before click = PASS
+2025-01-15 00:15:05 INFO  FirstTestsHometask.ifModalShowAndHideIsCorrect:75 - [Chrome] after click = PASS
+2025-01-15 00:15:05 INFO  FirstTestsHometask.ifModalShowAndHideIsCorrect:84 - [Chrome] after 2click = PASS
+2025-01-15 00:15:07 INFO  FirstTestsHometask.ifModalShowAndHideIsCorrect:68 - [Firefox] before click = PASS
+2025-01-15 00:15:07 INFO  FirstTestsHometask.ifModalShowAndHideIsCorrect:75 - [Firefox] after click = PASS
+2025-01-15 00:15:08 INFO  FirstTestsHometask.ifModalShowAndHideIsCorrect:84 - [Firefox] after 2click = PASS
