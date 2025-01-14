@@ -24,7 +24,6 @@ public class FirstTestsHometask  {
     @ParameterizedTest
     @ValueSource(  classes = { ChromeDriver.class, FirefoxDriver.class } )
     @DisplayName("Первый тест домашки: поле ввода")
-    @Disabled
     void ifEqualsInputText(Class<? extends WebDriver> webDriverClass)  {
 
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
@@ -65,35 +64,49 @@ public class FirstTestsHometask  {
         WebElement myModal = driver.findElement(By.id("myModal"));
         WebElement openModalBtn = driver.findElement(By.id("openModalBtn")); //
 
-        //если модалка видна до клика - фейл
-        if (myModal.isDisplayed()) logger.warn("{}before click = FAIL", currentBrowser);
-        else logger.info("{}before click = PASS", currentBrowser);
-        // assertTrue(!myModal.isDisplayed());
-        assertAll( () -> assertTrue(!myModal.isDisplayed()));
+        boolean stepBeforeOpening, stepAfterOpening, stepAfterClosing;
+
+        //видимость до открытия
+        stepBeforeOpening = myModal.isDisplayed();
 
         //кликаем по кнопке открыть
         openModalBtn.click();
 
-        //если модалка не видна после клика - фейл
-        if (myModal.isDisplayed()) logger.info("{}after click = PASS", currentBrowser);
-        else logger.warn("{}after click = FAIL", currentBrowser);
-        assertTrue(myModal.isDisplayed());
+        //видимость после открытия
+        stepAfterOpening = myModal.isDisplayed();
 
         //кликаем по крестику
         closeModalBtn.click();
 
-        //если модалка видна после второго клика - фейл
-        if (myModal.isDisplayed()) logger.warn("{}after 2click = FAIL", currentBrowser);
-        else logger.info("{}after 2click = PASS", currentBrowser);
-       // assertTrue(!myModal.isDisplayed());
-        assertAll( () -> assertTrue(!myModal.isDisplayed()));
+        //видимость после закрытия
+        stepAfterClosing = myModal.isDisplayed();
+
+        assertAll(
+                () -> {
+                    if (stepBeforeOpening) logger.warn("{}stepBeforeOpening = FAIL", currentBrowser);
+                    else logger.info("{}stepBeforeOpening = PASS", currentBrowser);
+                    assertTrue(!stepBeforeOpening);
+                },
+
+                () -> {
+                    if (stepAfterOpening) logger.info("{}stepAfterOpening = PASS", currentBrowser);
+                    else logger.warn("{}stepAfterOpening = FAIL", currentBrowser);
+                    assertTrue(stepAfterOpening);
+                },
+
+                () -> {
+                    if (stepAfterClosing) logger.warn("{}stepAfterClosing = FAIL", currentBrowser);
+                    else logger.info("{}stepAfterClosing = PASS", currentBrowser);
+                    assertTrue(!stepAfterClosing);
+                }
+        );
+
 
     }
 
     @ParameterizedTest
     @ValueSource(  classes = { ChromeDriver.class, FirefoxDriver.class } )
     @DisplayName("Третий тест домашки: отправка формы")
-    @Disabled
     void ifTextGotValuesFromForm(Class<? extends WebDriver> webDriverClass) {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
         driver = constructWebDriver.constructWebDriver(webDriverClass, "start-fullscreen");
