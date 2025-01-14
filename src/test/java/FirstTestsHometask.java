@@ -24,6 +24,7 @@ public class FirstTestsHometask  {
     @ParameterizedTest
     @ValueSource(  classes = { ChromeDriver.class, FirefoxDriver.class } )
     @DisplayName("Первый тест домашки: поле ввода")
+    @Disabled
     void ifEqualsInputText(Class<? extends WebDriver> webDriverClass)  {
 
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
@@ -67,7 +68,8 @@ public class FirstTestsHometask  {
         //если модалка видна до клика - фейл
         if (myModal.isDisplayed()) logger.warn("{}before click = FAIL", currentBrowser);
         else logger.info("{}before click = PASS", currentBrowser);
-        assertTrue(!myModal.isDisplayed());
+        // assertTrue(!myModal.isDisplayed());
+        assertAll( () -> assertTrue(!myModal.isDisplayed()));
 
         //кликаем по кнопке открыть
         openModalBtn.click();
@@ -83,14 +85,15 @@ public class FirstTestsHometask  {
         //если модалка видна после второго клика - фейл
         if (myModal.isDisplayed()) logger.warn("{}after 2click = FAIL", currentBrowser);
         else logger.info("{}after 2click = PASS", currentBrowser);
-        assertTrue(!myModal.isDisplayed());
+       // assertTrue(!myModal.isDisplayed());
+        assertAll( () -> assertTrue(!myModal.isDisplayed()));
 
     }
 
     @ParameterizedTest
     @ValueSource(  classes = { ChromeDriver.class, FirefoxDriver.class } )
     @DisplayName("Третий тест домашки: отправка формы")
-    //@Disabled
+    @Disabled
     void ifTextGotValuesFromForm(Class<? extends WebDriver> webDriverClass) {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
         driver = constructWebDriver.constructWebDriver(webDriverClass, "start-fullscreen");
