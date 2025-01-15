@@ -41,7 +41,7 @@ public class FirstTestsHometask  {
         AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
 
         //для записи в лог текущего значения браузера
-        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "").toLowerCase() + "] ";
+        //String currentBrowser = webDriverClass.getSimpleName().replace("Driver", "").toLowerCase();
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement textInput = driver.findElement(By.id("textInput"));
@@ -54,7 +54,7 @@ public class FirstTestsHometask  {
         String textValue = textInput.getAttribute("value");
 
         //сравниваем
-        assertWithLog.assertWithLog( checkingText.equals(textValue));
+        assertWithLog.assertWithLog( checkingText.equals(textValue) );
     }
 
     @ParameterizedTest
@@ -72,8 +72,7 @@ public class FirstTestsHometask  {
         StandartWaiter standartWaiter = new StandartWaiter(driver);
 
         //для записи в лог текущего значения браузера
-        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "").toLowerCase() + "] ";
-
+        String currentBrowser = webDriverClass.getSimpleName().replace("Driver", "").toLowerCase();
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement closeModalBtn = driver.findElement(By.id("closeModal"));
@@ -123,7 +122,7 @@ public class FirstTestsHometask  {
         AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
         
         //для записи в лог текущего значения браузера
-        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "").toLowerCase() + "] ";
+        //String currentBrowser = webDriverClass.getSimpleName().replace("Driver", "").toLowerCase();
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement inputName = driver.findElement(By.id("name"));
