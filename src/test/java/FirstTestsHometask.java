@@ -1,4 +1,5 @@
 
+import misc.AssertWithLog;
 import org.apache.logging.log4j.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -6,7 +7,8 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import misc.ConstructWebDriver;
+import webdriver.ConstructWebDriver;
+import waiters.StandartWaiter;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +19,10 @@ public class FirstTestsHometask  {
     //объявляем переменную вебдрайвера
     private WebDriver driver;// = new ChromeDriver(options);
     //Создаём объект от класса, создающего "параметризованный" вебдрайвер
-    private ConstructWebDriver constructWebDriver = new ConstructWebDriver();
+    ConstructWebDriver constructWebDriver = new ConstructWebDriver();
+    //подключаем класс-обёртку, объединяющую логгирование и assertTrue
+    AssertWithLog assertWithLog = new AssertWithLog();
+
 
 
   //  @Test
@@ -27,7 +32,12 @@ public class FirstTestsHometask  {
     void ifEqualsInputText(Class<? extends WebDriver> webDriverClass)  {
 
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
-        driver = constructWebDriver.constructWebDriver(webDriverClass, "headless");
+        driver = constructWebDriver.constructWebDriver(
+                webDriverClass,
+                "headless",
+                "https://otus.home.kartushin.su/training.html"
+        );
+
 
         //для записи в лог текущего значения браузера
         String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
@@ -43,62 +53,59 @@ public class FirstTestsHometask  {
         String textValue = textInput.getAttribute("value");
 
         //сравниваем
-        if (checkingText.equals(textValue)) logger.info("{}text equals = PASS", currentBrowser);
-        else logger.warn("{}text equals = FAIL", currentBrowser);
-        assertEquals(checkingText, textValue, currentBrowser + "text equals = FAIL");
+//        if (checkingText.equals(textValue)) logger.info("{}text equals = PASS", currentBrowser);
+//        else logger.warn("{}text equals = FAIL", currentBrowser);
+//        assertEquals(checkingText, textValue, currentBrowser + "text equals = FAIL");
+        assertWithLog.assertWithLog( checkingText.equals(textValue), "ifEqualsInputText", logger, currentBrowser);
     }
 
     @ParameterizedTest
     @ValueSource(  classes = { ChromeDriver.class, FirefoxDriver.class } )
     @DisplayName("Второй тест домашки: модалка")
-    //@Disabled
     void ifModalShowAndHideIsCorrect(Class<? extends WebDriver> webDriverClass)  {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
-        driver = constructWebDriver.constructWebDriver(webDriverClass, "kiosk");
+        driver = constructWebDriver.constructWebDriver(
+                webDriverClass,
+                "kiosk",
+                "https://otus.home.kartushin.su/training.html");
+
+
+        //Подключаем waiter
+        StandartWaiter standartWaiter = new StandartWaiter(driver);
 
         //для записи в лог текущего значения браузера
         String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
+
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement closeModalBtn = driver.findElement(By.id("closeModal"));
         WebElement myModal = driver.findElement(By.id("myModal"));
         WebElement openModalBtn = driver.findElement(By.id("openModalBtn")); //
 
-        boolean visibleBeforeOpening, visibleAfterOpening, visibleAfterClosing;
+
+        boolean invisibleBeforeOpening, visibleAfterOpening, invisibleAfterClosing;
 
         //видимость до открытия
-        visibleBeforeOpening = myModal.isDisplayed();
+        invisibleBeforeOpening = standartWaiter.waitForElementNotVisible(myModal); //myModal.isDisplayed();
 
         //кликаем по кнопке открыть
         openModalBtn.click();
 
         //видимость после открытия
-        visibleAfterOpening = myModal.isDisplayed();
+        visibleAfterOpening = standartWaiter.waitForElementVisible(myModal); //myModal.isDisplayed();
 
         //кликаем по крестику
         closeModalBtn.click();
 
         //видимость после закрытия
-        visibleAfterClosing = myModal.isDisplayed();
+        invisibleAfterClosing =  standartWaiter.waitForElementNotVisible(myModal); //myModal.isDisplayed();myModal.isDisplayed();
 
         assertAll(
-                () -> {
-                    if (visibleBeforeOpening) logger.warn("{}visibleBeforeOpening = FAIL", currentBrowser);
-                    else logger.info("{}visibleBeforeOpening = PASS", currentBrowser);
-                    assertTrue(!visibleBeforeOpening, currentBrowser + "visibleBeforeOpening = FAIL");
-                },
+                () -> assertWithLog.assertWithLog( invisibleBeforeOpening, "ifModalShowAndHideIsCorrect > invisibleBeforeOpening", logger, currentBrowser),
 
-                () -> {
-                    if (visibleAfterOpening) logger.info("{}visibleAfterOpening = PASS", currentBrowser);
-                    else logger.warn("{}visibleAfterOpening = FAIL", currentBrowser);
-                    assertTrue(visibleAfterOpening, currentBrowser + "visibleAfterOpening = FAIL");
-                },
+                () -> assertWithLog.assertWithLog( visibleAfterOpening, "ifModalShowAndHideIsCorrect > visibleAfterOpening", logger, currentBrowser),
 
-                () -> {
-                    if (visibleAfterClosing) logger.warn("{}visibleAfterClosing = FAIL", currentBrowser);
-                    else logger.info("{}visibleAfterClosing = PASS", currentBrowser);
-                    assertTrue(!visibleAfterClosing,  currentBrowser + "visibleAfterClosing = FAIL");
-                }
+                () -> assertWithLog.assertWithLog( invisibleAfterClosing, "ifModalShowAndHideIsCorrect > invisibleAfterClosing", logger, currentBrowser)
         );
 
 
@@ -109,7 +116,12 @@ public class FirstTestsHometask  {
     @DisplayName("Третий тест домашки: отправка формы")
     void ifTextGotValuesFromForm(Class<? extends WebDriver> webDriverClass) {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
-        driver = constructWebDriver.constructWebDriver(webDriverClass, "start-fullscreen");
+        driver = constructWebDriver.constructWebDriver(
+                webDriverClass,
+                "start-fullscreen",
+                "https://otus.home.kartushin.su/training.html"
+        );
+
 
         //для записи в лог текущего значения браузера
         String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
@@ -136,9 +148,11 @@ public class FirstTestsHometask  {
 
         //проверяем соответствие значения текстовой строки значениям отправленных из формы полей
         boolean isEqualsValues = textValue.matches("(.*)" + checkingName + "(.*)" + checkingEmail + "(.*)");
-        if (isEqualsValues) logger.info("{}form sent correctly = PASS", currentBrowser);
-        else logger.warn("{}form sent correctly = FAIL", currentBrowser);
-        assertTrue(isEqualsValues, currentBrowser + "form sent correctly = FAIL");
+//        if (isEqualsValues) logger.info("{}form sent correctly = PASS", currentBrowser);
+//        else logger.warn("{}form sent correctly = FAIL", currentBrowser);
+//        assertTrue(isEqualsValues, currentBrowser + "form sent correctly = FAIL");
+          assertWithLog.assertWithLog( isEqualsValues, "ifTextGotValuesFromForm", logger, currentBrowser);
+
     }
 
 

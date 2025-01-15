@@ -1,82 +1,20 @@
-2025-01-15 01:32:19 WARN  FirstTestsHometask.ifModalShowAndHideIsCorrect:69 - [Chrome] before click = FAIL
-2025-01-15 01:32:22 WARN  FirstTestsHometask.ifModalShowAndHideIsCorrect:69 - [Firefox] before click = FAIL
-2025-01-15 01:45:57 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:112 - [Chrome] before click = PASS
-2025-01-15 01:45:57 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:117 - [Chrome] after click = PASS
-2025-01-15 01:45:57 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:124 - [Chrome] after 2click = PASS
-2025-01-15 01:46:00 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:112 - [Firefox] before click = PASS
-2025-01-15 01:46:00 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:117 - [Firefox] after click = PASS
-2025-01-15 01:46:00 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:124 - [Firefox] after 2click = PASS
-2025-01-15 01:47:59 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:112 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 01:47:59 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:117 - [Chrome] stepAfterOpening= PASS
-2025-01-15 01:47:59 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:124 - [Chrome] stepAfterClosing = PASS
-2025-01-15 01:48:02 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:112 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 01:48:02 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:117 - [Firefox] stepAfterOpening= PASS
-2025-01-15 01:48:02 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:124 - [Firefox] stepAfterClosing = PASS
-2025-01-15 01:48:48 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:113 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 01:48:48 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:118 - [Chrome] stepAfterOpening= PASS
-2025-01-15 01:48:48 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:125 - [Chrome] stepAfterClosing = PASS
-2025-01-15 01:48:51 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:113 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 01:48:51 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:118 - [Firefox] stepAfterOpening= PASS
-2025-01-15 01:48:51 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:125 - [Firefox] stepAfterClosing = PASS
-2025-01-15 01:49:53 WARN  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:111 - [Chrome] stepBeforeOpening = FAIL
-2025-01-15 01:49:53 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:117 - [Chrome] stepAfterOpening= PASS
-2025-01-15 01:49:53 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:124 - [Chrome] stepAfterClosing = PASS
-2025-01-15 01:49:56 WARN  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:111 - [Firefox] stepBeforeOpening = FAIL
-2025-01-15 01:49:56 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:117 - [Firefox] stepAfterOpening= PASS
-2025-01-15 01:49:56 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:124 - [Firefox] stepAfterClosing = PASS
-2025-01-15 02:01:11 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:88 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 02:01:11 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:93 - [Chrome] stepAfterOpening = PASS
-2025-01-15 02:01:11 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:100 - [Chrome] stepAfterClosing = PASS
-2025-01-15 02:01:14 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:88 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 02:01:14 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:93 - [Firefox] stepAfterOpening = PASS
-2025-01-15 02:01:14 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:100 - [Firefox] stepAfterClosing = PASS
-2025-01-15 02:32:42 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Chrome] form sent correctly = PASS
-2025-01-15 02:32:45 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Firefox] form sent correctly = PASS
-2025-01-15 02:32:47 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Chrome] text equals = PASS
-2025-01-15 02:32:48 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Firefox] text equals = PASS
-2025-01-15 02:32:50 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 02:32:50 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Chrome] stepAfterOpening = PASS
-2025-01-15 02:32:50 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Chrome] stepAfterClosing = PASS
-2025-01-15 02:32:53 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 02:32:53 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Firefox] stepAfterOpening = PASS
-2025-01-15 02:32:53 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Firefox] stepAfterClosing = PASS
-2025-01-15 02:48:04 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Chrome] form sent correctly = PASS
-2025-01-15 02:48:07 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Firefox] form sent correctly = PASS
-2025-01-15 02:48:09 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Chrome] text equals = PASS
-2025-01-15 02:48:11 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Firefox] text equals = PASS
-2025-01-15 02:48:13 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 02:48:13 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Chrome] stepAfterOpening = PASS
-2025-01-15 02:48:13 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Chrome] stepAfterClosing = PASS
-2025-01-15 02:48:16 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 02:48:16 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Firefox] stepAfterOpening = PASS
-2025-01-15 02:48:16 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Firefox] stepAfterClosing = PASS
-2025-01-15 02:51:01 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Chrome] form sent correctly = PASS
-2025-01-15 02:51:04 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Firefox] form sent correctly = PASS
-2025-01-15 02:51:06 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Chrome] text equals = PASS
-2025-01-15 02:51:08 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Firefox] text equals = PASS
-2025-01-15 02:51:10 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 02:51:10 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Chrome] stepAfterOpening = PASS
-2025-01-15 02:51:10 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Chrome] stepAfterClosing = PASS
-2025-01-15 02:51:13 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 02:51:13 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Firefox] stepAfterOpening = PASS
-2025-01-15 02:51:13 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Firefox] stepAfterClosing = PASS
-2025-01-15 02:51:51 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Chrome] form sent correctly = PASS
-2025-01-15 02:51:54 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Firefox] form sent correctly = PASS
-2025-01-15 02:51:56 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Chrome] text equals = PASS
-2025-01-15 02:51:58 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Firefox] text equals = PASS
-2025-01-15 02:51:59 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Chrome] stepBeforeOpening = PASS
-2025-01-15 02:51:59 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Chrome] stepAfterOpening = PASS
-2025-01-15 02:51:59 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Chrome] stepAfterClosing = PASS
-2025-01-15 02:52:02 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Firefox] stepBeforeOpening = PASS
-2025-01-15 02:52:02 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Firefox] stepAfterOpening = PASS
-2025-01-15 02:52:02 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Firefox] stepAfterClosing = PASS
-2025-01-15 02:54:37 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Chrome] form sent correctly = PASS
-2025-01-15 02:54:40 INFO  FirstTestsHometask.ifTextGotValuesFromForm:139 - [Firefox] form sent correctly = PASS
-2025-01-15 02:54:42 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Chrome] text equals = PASS
-2025-01-15 02:54:43 INFO  FirstTestsHometask.ifEqualsInputText:46 - [Firefox] text equals = PASS
-2025-01-15 02:54:45 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Chrome] visibleBeforeOpening = PASS
-2025-01-15 02:54:45 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Chrome] visibleAfterOpening = PASS
-2025-01-15 02:54:45 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Chrome] visibleAfterClosing = PASS
-2025-01-15 02:54:48 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$0:87 - [Firefox] visibleBeforeOpening = PASS
-2025-01-15 02:54:48 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$1:92 - [Firefox] visibleAfterOpening = PASS
-2025-01-15 02:54:48 INFO  FirstTestsHometask.lambda$ifModalShowAndHideIsCorrect$2:99 - [Firefox] visibleAfterClosing = PASS
+2025-01-15 23:48:30 INFO  FirstTestsHometask - [Chrome]     -> ifTextGotValuesFromForm > PASS
+2025-01-15 23:48:33 INFO  FirstTestsHometask - [Firefox]    -> ifTextGotValuesFromForm > PASS
+2025-01-15 23:48:34 INFO  FirstTestsHometask - [Chrome]     -> ifEqualsInputText > PASS
+2025-01-15 23:48:36 INFO  FirstTestsHometask - [Firefox]    -> ifEqualsInputText > PASS
+2025-01-15 23:48:38 INFO  FirstTestsHometask - [Chrome]     -> ifModalShowAndHideIsCorrect > visibleBeforeOpening > PASS
+2025-01-15 23:48:38 INFO  FirstTestsHometask - [Chrome]     -> ifModalShowAndHideIsCorrect > visibleAfterOpening > PASS
+2025-01-15 23:48:38 INFO  FirstTestsHometask - [Chrome]     -> ifModalShowAndHideIsCorrect > invisibleAfterClosing > PASS
+2025-01-15 23:48:41 INFO  FirstTestsHometask - [Firefox]    -> ifModalShowAndHideIsCorrect > visibleBeforeOpening > PASS
+2025-01-15 23:48:41 INFO  FirstTestsHometask - [Firefox]    -> ifModalShowAndHideIsCorrect > visibleAfterOpening > PASS
+2025-01-15 23:48:41 INFO  FirstTestsHometask - [Firefox]    -> ifModalShowAndHideIsCorrect > invisibleAfterClosing > PASS
+2025-01-16 00:06:32 INFO  FirstTestsHometask - [Chrome]     -> ifTextGotValuesFromForm > PASS
+2025-01-16 00:06:35 INFO  FirstTestsHometask - [Firefox]    -> ifTextGotValuesFromForm > PASS
+2025-01-16 00:06:36 INFO  FirstTestsHometask - [Chrome]     -> ifEqualsInputText > PASS
+2025-01-16 00:06:38 INFO  FirstTestsHometask - [Firefox]    -> ifEqualsInputText > PASS
+2025-01-16 00:06:40 INFO  FirstTestsHometask - [Chrome]     -> ifModalShowAndHideIsCorrect > invisibleBeforeOpening > PASS
+2025-01-16 00:06:40 WARN  FirstTestsHometask - [Chrome]     -> ifModalShowAndHideIsCorrect > visibleAfterOpening > FAIL
+2025-01-16 00:06:40 INFO  FirstTestsHometask - [Chrome]     -> ifModalShowAndHideIsCorrect > invisibleAfterClosing > PASS
+2025-01-16 00:06:43 INFO  FirstTestsHometask - [Firefox]    -> ifModalShowAndHideIsCorrect > invisibleBeforeOpening > PASS
+2025-01-16 00:06:43 WARN  FirstTestsHometask - [Firefox]    -> ifModalShowAndHideIsCorrect > visibleAfterOpening > FAIL
+2025-01-16 00:06:43 INFO  FirstTestsHometask - [Firefox]    -> ifModalShowAndHideIsCorrect > invisibleAfterClosing > PASS
