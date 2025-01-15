@@ -38,7 +38,6 @@ public class FirstTestsHometask  {
                 "https://otus.home.kartushin.su/training.html"
         );
 
-
         //для записи в лог текущего значения браузера
         String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
 
@@ -53,10 +52,8 @@ public class FirstTestsHometask  {
         String textValue = textInput.getAttribute("value");
 
         //сравниваем
-//        if (checkingText.equals(textValue)) logger.info("{}text equals = PASS", currentBrowser);
-//        else logger.warn("{}text equals = FAIL", currentBrowser);
-//        assertEquals(checkingText, textValue, currentBrowser + "text equals = FAIL");
-        assertWithLog.assertWithLog( checkingText.equals(textValue), "ifEqualsInputText", logger, currentBrowser);
+       // assertWithLog.assertWithLog( checkingText.equals(textValue), "ifEqualsInputText", logger, currentBrowser);
+        assertWithLog.assertWithLog( checkingText.equals(textValue), logger, currentBrowser);
     }
 
     @ParameterizedTest
@@ -148,10 +145,7 @@ public class FirstTestsHometask  {
 
         //проверяем соответствие значения текстовой строки значениям отправленных из формы полей
         boolean isEqualsValues = textValue.matches("(.*)" + checkingName + "(.*)" + checkingEmail + "(.*)");
-//        if (isEqualsValues) logger.info("{}form sent correctly = PASS", currentBrowser);
-//        else logger.warn("{}form sent correctly = FAIL", currentBrowser);
-//        assertTrue(isEqualsValues, currentBrowser + "form sent correctly = FAIL");
-          assertWithLog.assertWithLog( isEqualsValues, "ifTextGotValuesFromForm", logger, currentBrowser);
+        assertWithLog.assertWithLog( isEqualsValues, logger, currentBrowser);
 
     }
 
