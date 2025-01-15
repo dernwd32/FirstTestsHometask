@@ -45,7 +45,7 @@ public class FirstTestsHometask  {
         //сравниваем
         if (checkingText.equals(textValue)) logger.info("{}text equals = PASS", currentBrowser);
         else logger.warn("{}text equals = FAIL", currentBrowser);
-        assertEquals(checkingText, textValue);
+        assertEquals(checkingText, textValue, currentBrowser + "text equals = FAIL");
     }
 
     @ParameterizedTest
@@ -64,40 +64,40 @@ public class FirstTestsHometask  {
         WebElement myModal = driver.findElement(By.id("myModal"));
         WebElement openModalBtn = driver.findElement(By.id("openModalBtn")); //
 
-        boolean stepBeforeOpening, stepAfterOpening, stepAfterClosing;
+        boolean visibleBeforeOpening, visibleAfterOpening, visibleAfterClosing;
 
         //видимость до открытия
-        stepBeforeOpening = myModal.isDisplayed();
+        visibleBeforeOpening = myModal.isDisplayed();
 
         //кликаем по кнопке открыть
         openModalBtn.click();
 
         //видимость после открытия
-        stepAfterOpening = myModal.isDisplayed();
+        visibleAfterOpening = myModal.isDisplayed();
 
         //кликаем по крестику
         closeModalBtn.click();
 
         //видимость после закрытия
-        stepAfterClosing = myModal.isDisplayed();
+        visibleAfterClosing = myModal.isDisplayed();
 
         assertAll(
                 () -> {
-                    if (stepBeforeOpening) logger.warn("{}stepBeforeOpening = FAIL", currentBrowser);
-                    else logger.info("{}stepBeforeOpening = PASS", currentBrowser);
-                    assertTrue(!stepBeforeOpening);
+                    if (visibleBeforeOpening) logger.warn("{}visibleBeforeOpening = FAIL", currentBrowser);
+                    else logger.info("{}visibleBeforeOpening = PASS", currentBrowser);
+                    assertTrue(!visibleBeforeOpening, currentBrowser + "visibleBeforeOpening = FAIL");
                 },
 
                 () -> {
-                    if (stepAfterOpening) logger.info("{}stepAfterOpening = PASS", currentBrowser);
-                    else logger.warn("{}stepAfterOpening = FAIL", currentBrowser);
-                    assertTrue(stepAfterOpening);
+                    if (visibleAfterOpening) logger.info("{}visibleAfterOpening = PASS", currentBrowser);
+                    else logger.warn("{}visibleAfterOpening = FAIL", currentBrowser);
+                    assertTrue(visibleAfterOpening, currentBrowser + "visibleAfterOpening = FAIL");
                 },
 
                 () -> {
-                    if (stepAfterClosing) logger.warn("{}stepAfterClosing = FAIL", currentBrowser);
-                    else logger.info("{}stepAfterClosing = PASS", currentBrowser);
-                    assertTrue(!stepAfterClosing);
+                    if (visibleAfterClosing) logger.warn("{}visibleAfterClosing = FAIL", currentBrowser);
+                    else logger.info("{}visibleAfterClosing = PASS", currentBrowser);
+                    assertTrue(!visibleAfterClosing,  currentBrowser + "visibleAfterClosing = FAIL");
                 }
         );
 
@@ -138,7 +138,7 @@ public class FirstTestsHometask  {
         boolean isEqualsValues = textValue.matches("(.*)" + checkingName + "(.*)" + checkingEmail + "(.*)");
         if (isEqualsValues) logger.info("{}form sent correctly = PASS", currentBrowser);
         else logger.warn("{}form sent correctly = FAIL", currentBrowser);
-        assertTrue(isEqualsValues);
+        assertTrue(isEqualsValues, currentBrowser + "form sent correctly = FAIL");
     }
 
 
