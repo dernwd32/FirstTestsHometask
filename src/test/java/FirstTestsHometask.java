@@ -38,8 +38,10 @@ public class FirstTestsHometask  {
                 "https://otus.home.kartushin.su/training.html"
         );
 
+        AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
+
         //для записи в лог текущего значения браузера
-        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
+        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "").toLowerCase() + "] ";
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement textInput = driver.findElement(By.id("textInput"));
@@ -52,8 +54,7 @@ public class FirstTestsHometask  {
         String textValue = textInput.getAttribute("value");
 
         //сравниваем
-       // assertWithLog.assertWithLog( checkingText.equals(textValue), "ifEqualsInputText", logger, currentBrowser);
-        assertWithLog.assertWithLog( checkingText.equals(textValue), logger, currentBrowser);
+        assertWithLog.assertWithLog( checkingText.equals(textValue));
     }
 
     @ParameterizedTest
@@ -71,7 +72,7 @@ public class FirstTestsHometask  {
         StandartWaiter standartWaiter = new StandartWaiter(driver);
 
         //для записи в лог текущего значения браузера
-        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
+        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "").toLowerCase() + "] ";
 
 
         //находим объекты ДОМа, которыми будем пользоваться
@@ -119,9 +120,10 @@ public class FirstTestsHometask  {
                 "https://otus.home.kartushin.su/training.html"
         );
 
-
+        AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
+        
         //для записи в лог текущего значения браузера
-        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "") + "] ";
+        String currentBrowser = "[" + webDriverClass.getSimpleName().replace("Driver", "").toLowerCase() + "] ";
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement inputName = driver.findElement(By.id("name"));
@@ -145,7 +147,7 @@ public class FirstTestsHometask  {
 
         //проверяем соответствие значения текстовой строки значениям отправленных из формы полей
         boolean isEqualsValues = textValue.matches("(.*)" + checkingName + "(.*)" + checkingEmail + "(.*)");
-        assertWithLog.assertWithLog( isEqualsValues, logger, currentBrowser);
+        assertWithLog.assertWithLog( isEqualsValues);
 
     }
 
