@@ -1,5 +1,5 @@
 
-import misc.AssertWithLog;
+import asserts.AssertWithLog;
 import org.apache.logging.log4j.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
