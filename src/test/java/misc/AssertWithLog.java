@@ -32,16 +32,10 @@ public class AssertWithLog {
         //получаем StackTrace для того, чтоб узнать имя тестового метода, вызывающего assertWithLog
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
-        //Получаем имя текущего браузера
-        Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-        String currentBrowser = cap.getBrowserName();
-
         assertWithLog(
                 condition,
                 //по дефолту отправляем в message название тестового метода, из которого вызван текущий assertWithLog
-                stackTrace[2].getMethodName(),
-                logger,
-                currentBrowser
+                stackTrace[2].getMethodName()
         );
     }
 
