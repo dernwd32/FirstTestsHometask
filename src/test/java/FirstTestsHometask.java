@@ -132,6 +132,10 @@ public class FirstTestsHometask  {
         WebElement inputEmail = driver.findElement(By.id("email"));
         WebElement messageBox = driver.findElement(By.id("messageBox"));
         WebElement thisForm = driver.findElement(By.id("sampleForm"));
+        WebElement hideBtn = driver.findElement(By.id("toggleMessage"));
+
+        // ****************************************
+        // проверим будет ли работать, если текстовый блок отображён
 
         //заводим текстовые переменные
         String checkingName = "MyTestName";
@@ -144,13 +148,43 @@ public class FirstTestsHometask  {
         //отправляем форму
         thisForm.submit();
 
-        //получаем значение текстовой строки, изменённой в зав-ти от отправленных из формы значений
+        //получаем значение текстового блока, изменённой в зав-ти от отправленных из формы значений
         String textValue = messageBox.getText();
 
-        //проверяем соответствие значения текстовой строки значениям отправленных из формы полей
-        boolean isEqualsValues = textValue.matches("(.*)" + checkingName + "(.*)" + checkingEmail + "(.*)");
-        assertWithLog.assertWithLog( isEqualsValues);
+        //проверяем соответствие значения текстового блока значениям отправленных из формы полей
+        boolean ifDivContainsValuesWhenDisplayed = textValue.matches("(.*)" + checkingName + "(.*)" + checkingEmail + "(.*)");
 
+        // ****************************************
+        // проверим будет ли работать, если текстовый блок скрыт
+
+        //заводим текстовые переменные
+        String checkingNameAfterHide = "2MyTestName";
+        String checkingEmailAfterHide = "2my@test.email";
+
+        //очищаем ранее введённые значения полей
+        //заполняем новыми значениями
+        inputName.clear();
+        inputName.sendKeys(checkingNameAfterHide);
+        inputEmail.clear();
+        inputEmail.sendKeys(checkingEmailAfterHide);
+
+        //скрываем текстовый блок
+        hideBtn.click();
+
+        //отправляем форму
+        thisForm.submit();
+
+        //получаем значение текстовой строки, изменённой в зав-ти от отправленных из формы значений
+        String textValueAfterHide = messageBox.getText();
+        //System.out.println("textValueAfterHide = " + textValueAfterHide);
+
+        boolean ifDivDoesntContainValuesWhenHidden = !textValueAfterHide.matches("(.*)" + checkingNameAfterHide + "(.*)" + checkingEmailAfterHide + "(.*)");
+
+        assertAll(
+                () -> assertWithLog.assertWithLog( ifDivContainsValuesWhenDisplayed, "ifTextGotValuesFromForm > ifDivContainsValuesWhenDisplayed"),
+
+                () -> assertWithLog.assertWithLog( ifDivDoesntContainValuesWhenHidden, "ifTextGotValuesFromForm > ifDivDoesntContainValuesWhenHidden")
+        );
     }
 
 
