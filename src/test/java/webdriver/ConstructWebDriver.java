@@ -9,11 +9,14 @@ import java.time.Duration;
 
 
 public class ConstructWebDriver implements IWebDriver{
+    final int DEFAULT_IMPLICITLY_DURATION = 5;
 
     @Override
     public WebDriver constructWebDriver(Class<? extends WebDriver> webDriverClass, String mode, String url)  {
 
         WebDriver driver;
+
+
         switch (webDriverClass.getSimpleName()) {
             case "FirefoxDriver" -> {
                 //закидываем аргументы киоска и хэдлесса
@@ -31,7 +34,7 @@ public class ConstructWebDriver implements IWebDriver{
             }
         }
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(DEFAULT_IMPLICITLY_DURATION));
         driver.get(url);
 
         return driver;
