@@ -21,7 +21,7 @@ public class FirstTestsHometask  {
     //Создаём объект от класса, создающего "параметризованный" вебдрайвер
     ConstructWebDriver constructWebDriver = new ConstructWebDriver();
     //подключаем класс-обёртку, объединяющую логгирование и assertTrue
-    AssertWithLog assertWithLog = new AssertWithLog();
+    //AssertWithLog assertWithLog = new AssertWithLog();
 
 
 
@@ -38,6 +38,7 @@ public class FirstTestsHometask  {
                 "https://otus.home.kartushin.su/training.html"
         );
 
+        //подключаем класс-обёртку, объединяющую логгирование и assertTrue
         AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
 
         //для записи в лог текущего значения браузера
@@ -67,12 +68,14 @@ public class FirstTestsHometask  {
                 "-kiosk",
                 "https://otus.home.kartushin.su/training.html");
 
+        //подключаем класс-обёртку, объединяющую логгирование и assertTrue
+        AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
 
         //Подключаем waiter
         StandartWaiter standartWaiter = new StandartWaiter(driver);
 
         //для записи в лог текущего значения браузера
-        String currentBrowser = webDriverClass.getSimpleName().replace("Driver", "").toLowerCase();
+        //String currentBrowser = webDriverClass.getSimpleName().replace("Driver", "").toLowerCase();
 
         //находим объекты ДОМа, которыми будем пользоваться
         WebElement closeModalBtn = driver.findElement(By.id("closeModal"));
@@ -98,11 +101,11 @@ public class FirstTestsHometask  {
         invisibleAfterClosing =  standartWaiter.waitForElementNotVisible(myModal); //myModal.isDisplayed();myModal.isDisplayed();
 
         assertAll(
-                () -> assertWithLog.assertWithLog( invisibleBeforeOpening, "ifModalShowAndHideIsCorrect > invisibleBeforeOpening", logger, currentBrowser),
+                () -> assertWithLog.assertWithLog( invisibleBeforeOpening, "ifModalShowAndHideIsCorrect > invisibleBeforeOpening"),
 
-                () -> assertWithLog.assertWithLog( visibleAfterOpening, "ifModalShowAndHideIsCorrect > visibleAfterOpening", logger, currentBrowser),
+                () -> assertWithLog.assertWithLog( visibleAfterOpening, "ifModalShowAndHideIsCorrect > visibleAfterOpening"),
 
-                () -> assertWithLog.assertWithLog( invisibleAfterClosing, "ifModalShowAndHideIsCorrect > invisibleAfterClosing", logger, currentBrowser)
+                () -> assertWithLog.assertWithLog( invisibleAfterClosing, "ifModalShowAndHideIsCorrect > invisibleAfterClosing")
         );
 
 

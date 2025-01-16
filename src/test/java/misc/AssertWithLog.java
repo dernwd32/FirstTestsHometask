@@ -25,7 +25,8 @@ public class AssertWithLog {
     //дефолтный конструктор
     public AssertWithLog(){};
 
-    //Метод принимающий только
+    // Метод принимающий только условие, автоматически вычисляющий всё остальное.
+    // Работает с конструктором AssertWithLog(WebDriver driver, Logger logger)
     public void assertWithLog(boolean condition) {
 
         //получаем StackTrace для того, чтоб узнать имя тестового метода, вызывающего assertWithLog
@@ -44,6 +45,26 @@ public class AssertWithLog {
         );
     }
 
+    // Метод принимающий условие и сообщение, автоматически вычисляющий всё остальное
+    // Работает с конструктором AssertWithLog(WebDriver driver, Logger logger)
+    public void assertWithLog(boolean condition, String message) {
+
+        //Получаем имя текущего браузера
+        Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+        String currentBrowser = cap.getBrowserName();
+
+        assertWithLog(
+                condition,
+                //по дефолту отправляем в message название тестового метода, из которого вызван текущий assertWithLog
+                message,
+                logger,
+                currentBrowser
+        );
+
+    }
+
+    // основной перегруженный метод
+    // работает с дефолтным конструктором
     public void assertWithLog(boolean condition, String message, Logger logger, String currentBrowser) {
 
 
