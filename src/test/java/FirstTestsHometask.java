@@ -34,7 +34,7 @@ public class FirstTestsHometask  {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
         driver = constructWebDriver.constructWebDriver(
                 webDriverClass,
-                "headless",
+                "-headless",
                 "https://otus.home.kartushin.su/training.html"
         );
 
@@ -64,7 +64,7 @@ public class FirstTestsHometask  {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
         driver = constructWebDriver.constructWebDriver(
                 webDriverClass,
-                "kiosk",
+                "-kiosk",
                 "https://otus.home.kartushin.su/training.html");
 
 
@@ -115,7 +115,7 @@ public class FirstTestsHometask  {
         //передаем тип браузера и аргументы запуска и получаем готовый вебдрайвер по заданным параметрам
         driver = constructWebDriver.constructWebDriver(
                 webDriverClass,
-                "start-fullscreen",
+                "-start-fullscreen",
                 "https://otus.home.kartushin.su/training.html"
         );
 

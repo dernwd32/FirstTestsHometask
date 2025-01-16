@@ -17,16 +17,16 @@ public class ConstructWebDriver implements IWebDriver{
         switch (webDriverClass.getSimpleName()) {
             case "FirefoxDriver" -> {
                 //закидываем аргументы киоска и хэдлесса
-                FirefoxOptions options = new FirefoxOptions().addArguments("-" + mode);
+                FirefoxOptions options = new FirefoxOptions().addArguments(mode);
                 driver = WebDriverManager.getInstance(webDriverClass).capabilities(options).create();
 
                 //лиса не умеет в фулскрин через аргументы, т.ч. для неё вот так
-                if (mode.equals("start-fullscreen"))
+                if (mode.matches("(.*)start-fullscreen(.*)"))
                     driver.manage().window().fullscreen();
 
             }
             default -> { //дефолтные параметры => хром
-                ChromeOptions options = new ChromeOptions().addArguments("--" + mode);
+                ChromeOptions options = new ChromeOptions().addArguments(mode);
                 driver = WebDriverManager.getInstance(webDriverClass).capabilities(options).create();
             }
         }

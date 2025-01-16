@@ -7,6 +7,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 import java.util.Arrays;
+import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +28,7 @@ public class AssertWithLog {
     //Метод принимающий только
     public void assertWithLog(boolean condition) {
 
-        //если не передан message, вставляем туда название тестового метода
+        //получаем StackTrace для того, чтоб узнать имя тестового метода, вызывающего assertWithLog
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
         //Получаем имя текущего браузера
