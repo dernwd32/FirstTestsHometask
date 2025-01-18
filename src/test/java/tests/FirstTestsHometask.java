@@ -1,3 +1,4 @@
+package tests;
 
 import asserts.AssertWithLog;
 import org.apache.logging.log4j.*;

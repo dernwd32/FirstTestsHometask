@@ -24,7 +24,7 @@ public class ConstructWebDriver implements IWebDriver{
                 driver = WebDriverManager.getInstance(webDriverClass).capabilities(options).create();
 
                 //лиса не умеет в фулскрин через аргументы, т.ч. для неё вот так
-                if (mode.matches("(.*)start-fullscreen(.*)"))
+                if (mode.matches("start-fullscreen"))
                     driver.manage().window().fullscreen();
 
             }

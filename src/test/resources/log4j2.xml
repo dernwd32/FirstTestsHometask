@@ -6,7 +6,7 @@
         <Property name="LOG_LEVEL_PATTERN">%-5p</Property>
         <Property name="LOG_DATE_PATTERN">%d{yyyy-MM-dd HH:mm:ss}</Property>
         <Property name="LOG_CLASS_METHOD_STRING_PATTERN">%c{1}.%M:%L</Property> <!-- не используем, т.к. обёртка ассерта все методы и строки заменяет на свои -->
-        <Property name="LOG_CLASS_PATTERN">%c</Property>
+        <Property name="LOG_CLASS_PATTERN">%-35c</Property>
         <Property name="LOG_PATTERN">${LOG_DATE_PATTERN} ${LOG_LEVEL_PATTERN} ${LOG_CLASS_PATTERN} - %m%n</Property>
         <!--
         %-5p - уровень ошибки, зарезервированная длина - 5 символов
