@@ -19,8 +19,7 @@ public class FirstTestsHometask  {
     private WebDriver driver;// = new ChromeDriver(options);
     //Создаём объект от класса, создающего "параметризованный" вебдрайвер
     ConstructWebDriver constructWebDriver = new ConstructWebDriver();
-    //подключаем класс-обёртку, объединяющую логгирование и assertTrue
-    //AssertWithLog assertWithLog = new AssertWithLog();
+
 
 
 
@@ -122,7 +121,10 @@ public class FirstTestsHometask  {
         );
 
         AssertWithLog assertWithLog = new AssertWithLog(driver, logger);
-        
+
+        //Подключаем waiter
+        //StandartWaiter standartWaiter = new StandartWaiter(driver);
+
         //для записи в лог текущего значения браузера
         //String currentBrowser = webDriverClass.getSimpleName().replace("Driver", "").toLowerCase();
 
@@ -178,7 +180,10 @@ public class FirstTestsHometask  {
         //System.out.println("textValueAfterHide = " + textValueAfterHide);
 
         boolean ifDivDoesntContainValuesWhenHidden = !textValueAfterHide.matches("(.*)" + checkingNameAfterHide + "(.*)" + checkingEmailAfterHide + "(.*)");
-
+//      boolean ifDivMatchesValuesWhenHidden = standartWaiter.waitForTextMatches(
+//                By.id("messageBox"),
+//                "(.*)" + checkingNameAfterHide + "(.*)" + checkingEmailAfterHide + "(.*)"
+//        );
         assertAll(
                 () -> assertWithLog.assertWithLog( ifDivContainsValuesWhenDisplayed, "ifTextGotValuesFromForm > ifDivContainsValuesWhenDisplayed"),
 
@@ -189,7 +194,7 @@ public class FirstTestsHometask  {
 
 
     @AfterEach
-    void tearDown() {
+        void tearDown() {
         driver.close();
     }
 }

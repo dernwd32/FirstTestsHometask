@@ -1,5 +1,6 @@
 package waiters;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.regex.Pattern;
 
 /**
  * Копипаста кода сенсея - не плагиат, а дань уважения :P
@@ -40,4 +42,9 @@ public class StandartWaiter implements WaiterInt {
   public boolean waitForElementNotVisible(WebElement element) {
     return waitForCondition(ExpectedConditions.invisibilityOf(element));
   }
+
+  public boolean waitForTextMatches(By locator, String pattern) {
+    return waitForCondition(ExpectedConditions.textMatches(locator, Pattern.compile(pattern)));
+  }
+
 }
